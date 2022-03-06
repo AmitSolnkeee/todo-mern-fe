@@ -31,7 +31,7 @@ function App() {
     await axios.post(`${API_URL}/api/todo`, {
       todoList :newTodo
     }).then(response =>setTodos([...todos , response.data]));
-    setNewTodo("");
+    setNewTodo('');
      
   }
 
@@ -39,7 +39,7 @@ function App() {
   //delete handler
   const deleteTodoHandler = async(id) => { 
     await axios.delete(`${API_URL}/api/todo/${id}`);
-    setRefresh("hfdh")
+    setRefresh(Math.random()*1000)
     //window.location.reload();
   }
 
@@ -47,7 +47,7 @@ function App() {
   const completeTodoHandler = async(id) => { 
      await axios.put(`${API_URL}/api/todo/${id}`);
      //window.location.reload();
-     setRefresh("skghfk")
+     setRefresh(Math.random()*1000)
   }
 
  /* useEffect(()=>{
